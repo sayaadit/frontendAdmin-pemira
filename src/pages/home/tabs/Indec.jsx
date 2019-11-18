@@ -13,14 +13,14 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const RekapSR = () => {
+const RekapIndec = () => {
   const classes = useStyles()
   const [data, setData] = useState(null)
   let namaPaslon = 'belum memilih'
   useEffect(() => {
     async function fetchData() {
       const himpunan = await axios(
-        'http://localhost:8000/api/v1/get-count-himpunan/sr',
+        'http://localhost:8000/api/v1/get-count-himpunan/indec',
       )
       setData(himpunan.data.data)
     }
@@ -78,4 +78,4 @@ const RekapSR = () => {
   )
 }
 
-export default RekapSR
+export default RekapIndec

@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../assets/logo.png'
 import Button from '@material-ui/core/Button'
 import {makeStyles} from '@material-ui/core/styles'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   logout: {
@@ -14,19 +14,21 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'Strasua',
     fontStyle: 'regular',
   },
-  ktm: {
-    margin: theme.spacing(1),
-    borderRadius: 16,
-    backgroundColor: '#F5CB1D',
-    color: '#fff',
-    fontWeight: 'bold',
-    fontFamily: 'Strasua',
-    fontStyle: 'regular',
-  },
 }))
 
-const Header = () => {
+function Header() {
   const classes = useStyles()
+  const history = useHistory()
+  const login = JSON.parse(localStorage.getItem('_p'))
+
+  if (login === null) {
+    history.push('/')
+    console.log(login)
+  }
+  const logout = () => {
+    localStorage.removeItem('_p')
+    history.push('/')
+  }
   return (
     <div>
       <nav
@@ -54,18 +56,17 @@ const Header = () => {
               paddingTop: 15,
             }}
           >
-            Halo, Asepbalon
+            Halo, Admin
           </h4>
         </div>
         <div style={{flex: 0.2, margin: 0}}>
-          <Button variant='contained' className={classes.ktm}>
-            Ktm
+          <Button
+            variant='contained'
+            className={classes.logout}
+            onClick={() => logout()}
+          >
+            Logout
           </Button>
-          <Link to='/login'>
-            <Button variant='contained' className={classes.logout}>
-              Logout
-            </Button>
-          </Link>
         </div>
       </nav>
     </div>

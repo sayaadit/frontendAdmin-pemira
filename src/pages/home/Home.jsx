@@ -13,6 +13,7 @@ import DI from './tabs/DI'
 import DKV from './tabs/DKV'
 import KTM from './tabs/KTM'
 import SR from './tabs/SR'
+import Indec from './tabs/Indec'
 
 const useStyles = makeStyles(theme => ({
   tabs: {
@@ -38,9 +39,9 @@ function Home() {
       <Header />
       <Container>
         <h1>Rekap BEM</h1>
-        <RekapDpm />
-        <h1>Rekap DPM</h1>
         <RekapBem />
+        <h1>Rekap DPM</h1>
+        <RekapDpm />
         <h1>Rekap Himpunan</h1>
         <Paper className={classes.tabs}>
           <Tabs
@@ -54,12 +55,14 @@ function Home() {
             <Tab label='KTM' className={classes.tab} />
             <Tab label='DKV' className={classes.tab} />
             <Tab label='SR' className={classes.tab} />
+            <Tab label='INDEC' className={classes.tab} />
           </Tabs>
         </Paper>
         {value === 0 && <DI />}
         {value === 1 && <KTM />}
         {value === 2 && <DKV />}
         {value === 3 && <SR />}
+        {value === 4 && <Indec />}
       </Container>
     </div>
   )
