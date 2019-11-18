@@ -18,7 +18,9 @@ const RekapBem = () => {
   let namaPaslon = 'belum memilih'
   useEffect(() => {
     async function fetchData() {
-      const bem = await axios('http://localhost:8000/api/v1/get-count-bem')
+      const bem = await axios(
+        'http://kinamotif.com/backend/api/v1/get-count-bem',
+      )
 
       setData(bem.data.data)
     }

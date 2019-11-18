@@ -58,7 +58,7 @@ function Login() {
     setLoading(true)
     axios
       .post(
-        'http://localhost:8000/api/v1/login-admin',
+        'http://kinamotif.com/backend/api/v1/login-admin',
         qs.stringify(requestBody),
         config,
       )

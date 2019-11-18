@@ -18,7 +18,9 @@ const RekapDpm = () => {
   let namaPaslon = 'belum memilih'
   useEffect(() => {
     async function fetchData() {
-      const bem = await axios('http://localhost:8000/api/v1/get-count-dpm')
+      const bem = await axios(
+        'http://kinamotif.com/backend/api/v1/get-count-dpm',
+      )
 
       setData(bem.data.data)
     }

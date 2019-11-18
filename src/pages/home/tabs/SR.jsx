@@ -20,7 +20,7 @@ const RekapSR = () => {
   useEffect(() => {
     async function fetchData() {
       const himpunan = await axios(
-        'http://localhost:8000/api/v1/get-count-himpunan/sr',
+        'http://kinamotif.com/backend/api/v1/get-count-himpunan/sr',
       )
       setData(himpunan.data.data)
     }

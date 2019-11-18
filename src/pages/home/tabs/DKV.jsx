@@ -20,7 +20,7 @@ const RekapDKV = () => {
   useEffect(() => {
     async function fetchData() {
       const himpunan = await axios(
-        'http://localhost:8000/api/v1/get-count-himpunan/dkv',
+        'http://kinamotif.com/backend/api/v1/get-count-himpunan/dkv',
       )
       setData(himpunan.data.data)
     }

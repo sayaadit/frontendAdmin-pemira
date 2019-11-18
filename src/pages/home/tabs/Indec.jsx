@@ -20,7 +20,7 @@ const RekapIndec = () => {
   useEffect(() => {
     async function fetchData() {
       const himpunan = await axios(
-        'http://localhost:8000/api/v1/get-count-himpunan/indec',
+        'http://kinamotif.com/backend/api/v1/get-count-himpunan/indec',
       )
       setData(himpunan.data.data)
     }
